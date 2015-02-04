@@ -1,0 +1,7 @@
+parameters:
+#    dv_catalog.example.class: DV\Bundle\CatalogBundle\Example
+
+services:
+#    dv_catalog.example:
+#        class: %dv_catalog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

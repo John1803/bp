@@ -1,0 +1,8 @@
+custom_entities:
+    designer:
+        entity_class: DV\Bundle\CatalogBundle\Entity\Designer
+        actions:
+            edit:
+                form_type: dv_enrich_designer
+            create:
+                form_type: dv_enrich_designer

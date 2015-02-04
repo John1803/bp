@@ -1,0 +1,30 @@
+DV\Bundle\CatalogBundle\Entity\DesignerTranslation:
+    type: entity
+    table: dv_catalog_designer_translation
+    uniqueConstraints:
+        locale_foreign_key_idx:
+            columns:
+                - locale
+                - foreign_key
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        label:
+            type: string
+            length: 100
+            nullable: true
+        locale:
+            type: string
+            length: 20
+    manyToOne:
+       foreignKey:
+           targetEntity: DV\Bundle\CatalogBundle\Entity\Designer
+           inversedBy: translations
+           joinColumns:
+               foreign_key:
+                   referencedColumnName: id
+                   onDelete: CASCADE
+    lifecycleCallbacks: {  }

@@ -1,0 +1,31 @@
+DV\Bundle\CatalogBundle\Entity\Designer:
+    type: entity
+    table: dv_catalog_designer
+    repositoryClass: Pim\Bundle\CustomEntityBundle\Entity\Repository\TranslatableCustomOptionRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        code:
+            type: string
+            length: 100
+            unique: true
+        created:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+    oneToMany:
+        translations:
+            targetEntity: DV\Bundle\CatalogBundle\Entity\DesignerTranslation
+            mappedBy: foreignKey
+            cascade:
+                - persist
+    lifecycleCallbacks: {  }

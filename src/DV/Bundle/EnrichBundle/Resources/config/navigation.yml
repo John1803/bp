@@ -1,0 +1,13 @@
+oro_menu_config:
+    items:
+        dv_enrich_designer:
+            label:              'Designers'
+            route:              'pim_customentity_index'
+            routeParameters:    { customEntityName: designer }
+
+    tree:
+        application_menu:
+            children:
+                pim_enrich_tab:
+                    children:
+                        dv_enrich_designer: ~

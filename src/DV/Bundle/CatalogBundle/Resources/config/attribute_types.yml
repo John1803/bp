@@ -1,0 +1,25 @@
+parameters:
+    pim_datagrid.product.attribute_type.dv_designer:
+        column:
+            type:        flexible_option
+            selector:    flexible_option
+        filter:
+            type:        flexible_choice
+            parent_type: ajax_choice
+            options:
+                field_options:
+                    multiple: true
+        sorter:          flexible_field
+
+services:
+    dv_catalog.attributetype.designer:
+        class: '%pim_custom_entity.attribute_type.custom_option_simple_select.class%'
+        arguments:
+            - designer
+            - pim_ajax_entity
+            - '@pim_catalog.validator.constraint_guesser.chained_attribute'
+            - dv_catalog_designer
+            - DV\Bundle\CatalogBundle\Entity\Designer
+        tags:
+            - { name: pim_catalog.attribute_type, alias: dv_catalog_designer, entity: '%pim_catalog.entity.product.class%' }
+

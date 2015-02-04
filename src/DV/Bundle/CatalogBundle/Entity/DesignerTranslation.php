@@ -9,5 +9,4 @@ use Pim\Bundle\CustomEntityBundle\Entity\AbstractCustomOptionTranslation;
  */
 class DesignerTranslation extends AbstractCustomOptionTranslation
 {
-
 }
